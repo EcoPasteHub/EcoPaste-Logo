@@ -4,12 +4,18 @@ window.onload = () => {
   downloadElement.addEventListener("click", async () => {
     const { origin } = location;
 
-    for (const file of ["EcoPaste-logo.png", "EcoPaste-tray.png"]) {
+    const imgs = [
+      "EcoPaste-logo.png",
+      "EcoPaste-tray.png",
+      "EcoPaste-logo-BigSur.png",
+    ];
+
+    for (const img of imgs) {
       const link = document.createElement("a");
 
-      link.href = `${origin}/img/${file}`;
+      link.href = `${origin}/img/${img}`;
 
-      link.download = file;
+      link.download = img;
 
       link.click();
     }
